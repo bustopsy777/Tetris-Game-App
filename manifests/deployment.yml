@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: bustopsygame 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bustopsygame
+  template:
+    metadata:
+      labels:
+        app: bustopsygame 
+    spec:
+      containers:
+        - name: bustopsygame 
+          image: mylabacr25.azurecr.io/bustopsygame
+          ports:
+          - containerPort: 80
